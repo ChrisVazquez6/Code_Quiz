@@ -35,6 +35,7 @@ const displayQuestion = () => {
    <p
    class= 'option'
    data-option= '${questions[currentQuestion].options[1]}'
+   data-answer='${questions[currentQuestion].answer} '
    >
   ${questions[currentQuestion].options[1]}
   </p>
@@ -42,7 +43,13 @@ const displayQuestion = () => {
 }
 document.addEventListener('click', event =>{
   if(event.target.classList.contains('option')){
-    console.log(event.target.dataset.option);
+    // console.log(event.target.dataset.option);
+    // console.log(event.target.dataset.answer);
+    if(event.target.dataset.option=== event.target.dataset.answer){
+    console.log('Correct!');
+    }else{
+    console.log('Incorrect');
+    }
   }
 })
 
