@@ -7,7 +7,7 @@ currentQuestion = 0
 let questions = [
   {
     question: 'How do you pull a ID from HTML to Java?',
-    options: ['addEventListner','getElementById','pullId'],
+    options: ['addEventListner','getElementById'],
     answer: 'getElementById'
   },
   {
@@ -19,8 +19,32 @@ let questions = [
 
 const displayQuestion = () => {
   document.getElementById('question').innerHTML = `
-  ${questions[currentQuestion].question}  `
+  <p>
+  ${questions[currentQuestion].question} 
+  </p> 
+  `
+
+  document.getElementById('options').innerHTML = `
+  <p
+  class= 'option'
+  data-option='${questions[currentQuestion].options[0]} '
+  data-answer='${questions[currentQuestion].answer} '
+  >
+  ${questions[currentQuestion].options[0]}
+  </p>
+   <p
+   class= 'option'
+   data-option= '${questions[currentQuestion].options[1]}'
+   >
+  ${questions[currentQuestion].options[1]}
+  </p>
+  `
 }
+document.addEventListener('click', event =>{
+  if(event.target.classList.contains('option')){
+    console.log(event.target.dataset.option);
+  }
+})
 
 
 
