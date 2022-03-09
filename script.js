@@ -13,7 +13,6 @@ let questions = [
     question:'what do you use to style a page'
     options:['CSS','HTML']
     answer: 'CSS'
-
   }
 ]
 const displayQuestion = () => {
