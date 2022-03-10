@@ -42,7 +42,7 @@ const displayQuestion = () => {
   `
 }
 document.addEventListener('click', event =>{
-  if(event.target.classList.contains('option')){
+  if(event.target.classList.contains('option')) {
     // console.log(event.target.dataset.option);
     // console.log(event.target.dataset.answer);
     if(event.target.dataset.option=== event.target.dataset.answer){
