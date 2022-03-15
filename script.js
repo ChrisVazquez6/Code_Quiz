@@ -1,4 +1,6 @@
 currentQuestion = 0
+let score = 0
+let time = 60
 
 
 let questions = [
@@ -44,16 +46,25 @@ document.addEventListener('click', event => {
     console.log(event.target.dataset.answer)
     if (event.target.dataset.option = event.target.dataset.answer){
       console.log('correct');
+      score += 1
+      currentQuestion += 1
+      displayQuestion()
     }else{
       console.log('wrong');
     }
   }    
     
-})
+}) 
+const timeFunction= () =>{
+  time -=1
+  document.getElementById('time').innerHTML = `
+  ${time}`
+}
 
 
 
 
 document.getElementById('start').addEventListener('click', event => {
+setInterval(timeFunction,1000)
   displayQuestion()
 })
