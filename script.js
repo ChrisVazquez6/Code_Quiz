@@ -1,18 +1,15 @@
-
-
-
 currentQuestion = 0
 
 
 let questions = [
   {
     question: 'How do you pull a ID from HTML to Java?',
-    options: ['addEventListner','getElementById'],
-    answer: 'getElementById'
+    options: ['addeventlistner', 'getelementbyid'],
+    answer: 'getelementbyid'
   },
   {
-    question:'what do you use to style a page',
-    options:['CSS','HTML'],
+    question: 'what do you use to style a page',
+    options: ['CSS', 'HTML'],
     answer: 'CSS'
   }
 ]
@@ -41,21 +38,22 @@ const displayQuestion = () => {
   </p>
   `
 }
-document.addEventListener('click', event =>{
-  if(event.target.classList.contains('option')) {
-    // console.log(event.target.dataset.option);
-    // console.log(event.target.dataset.answer);
-    if(event.target.dataset.option=== event.target.dataset.answer){
-    console.log('Correct!');
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('option')) {
+    console.log(event.target.dataset.option)
+    console.log(event.target.dataset.answer)
+    if (event.target.dataset.option = event.target.dataset.answer){
+      console.log('correct');
     }else{
-    console.log('Incorrect');
+      console.log('wrong');
     }
-  }
+  }    
+    
 })
 
 
 
 
-document.getElementById('start').addEventListener ('click', event => {
+document.getElementById('start').addEventListener('click', event => {
   displayQuestion()
 })
