@@ -47,6 +47,15 @@ const displayScore = ()=> {
   
 } 
 
+const finishedQuiz = () =>
+{
+  displayScore()
+  clearInterval(clearTimer)
+  console.log('quiz is over!');
+  document.getElementById('question').innerHTML = ``
+  document.getElementById('options').innerHTML = ``
+}
+
 
 document.addEventListener('click', event => {
   if (event.target.classList.contains('option')) {
@@ -58,7 +67,9 @@ document.addEventListener('click', event => {
       displayScore()
       currentQuestion += 1
       if (currentQuestion=== questions.length) {
+        finishedQuiz()
         console.log('finished quiz');
+       clearInterval(clearTimer) 
         
       }else{
         console.log('quiz not finished');
@@ -84,9 +95,9 @@ const timeFunction= () =>{
 
 
 
-
+let clearTimer 
 document.getElementById('start').addEventListener('click', event => {
-setInterval(timeFunction,1000)
+clearTimer=setInterval(timeFunction,1000)
 displayScore()
   displayQuestion()
 })
