@@ -40,15 +40,31 @@ const displayQuestion = () => {
   </p>
   `
 }
+
+const displayScore = ()=> {
+  document.getElementById('score').innerHTML = `
+  score : ${score}`
+  
+} 
+
+
 document.addEventListener('click', event => {
   if (event.target.classList.contains('option')) {
-    console.log(event.target.dataset.option)
-    console.log(event.target.dataset.answer)
+    // console.log(event.target.dataset.option)
+    // console.log(event.target.dataset.answer)
     if (event.target.dataset.option = event.target.dataset.answer){
       console.log('correct');
       score += 1
+      displayScore()
       currentQuestion += 1
+      if (currentQuestion=== questions.length) {
+        console.log('finished quiz');
+        
+      }else{
+        console.log('quiz not finished');
+      }
       displayQuestion()
+      displayScore()
     }else{
       console.log('wrong');
     }
@@ -59,6 +75,11 @@ const timeFunction= () =>{
   time -=1
   document.getElementById('time').innerHTML = `
   ${time}`
+  if(time < 0 ){
+    document.getElementById('Game').innerHTML = `
+   <h1>TIME QUIZ OVER KEYBOARD DOWN! </h1>
+    `
+  }
 }
 
 
@@ -66,5 +87,6 @@ const timeFunction= () =>{
 
 document.getElementById('start').addEventListener('click', event => {
 setInterval(timeFunction,1000)
+displayScore()
   displayQuestion()
 })
