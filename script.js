@@ -13,8 +13,20 @@ let questions = [
     question: 'what do you use to style a page',
     options: ['CSS', 'HTML'],
     answer: 'CSS'
+  },
+  {
+    question: 'how do you start a HTML page ',
+    options: [' add!', 'add?'],
+    answer: 'add!'
+
+  },
+  {
+  question: 'How do you log something on console ',
+  options: ['log.console', 'console.log'],
+  answer: 'console.log'
   }
 ]
+
 
 const displayQuestion = () => {
   document.getElementById('question').innerHTML = `
@@ -37,6 +49,21 @@ const displayQuestion = () => {
    data-answer='${questions[currentQuestion].answer} '
    >
   ${questions[currentQuestion].options[1]}
+  </p>
+  </p>
+   <p
+   class= 'option'
+   data-option= '${questions[currentQuestion].options[2]}'
+   data-answer='${questions[currentQuestion].answer} '
+   >
+  ${questions[currentQuestion].options[2]}
+  </p>
+   <p
+   class= 'option'
+   data-option= '${questions[currentQuestion].options[3]}'
+   data-answer='${questions[currentQuestion].answer} '
+   >
+  ${questions[currentQuestion].options[3]}
   </p>
   `
 }
