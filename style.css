@@ -1,0 +1,21 @@
+#title{
+font-family: 'Times New Roman', Times, serif;
+font-size: 50px;
+text-align: center;
+}
+#start{
+  display: flex;
+  justify-content: center
+  ;
+
+}
+#time{
+  display: flex;
+  float: right;
+  float:;
+  border: solid 5px;
+  padding: 10px;
+  font-size: 25px;
+}
+#question{
+  text-align: center;
